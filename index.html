@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Tour Pasuruan — Premium Travel Experience</title>
+  <meta name="description" content="Jasa travel premium dan sewa mobil terpercaya di Pasuruan. Layanan wisata Bromo, Ijen, dan perjalanan korporat.">
+  <meta property="og:title" content="Travel Tour Pasuruan — Premium Travel Experience">
+  <meta property="og:description" content="Solusi perjalanan wisata dan sewa mobil premium di Pasuruan. Armada terawat, driver profesional.">
+  <meta property="og:image" content="images/general/hero-bromo.jpg"> <!-- FOTO: Hero background (Bromo/Ijen panorama) -->
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-primary: #0f172a;
+      --color-secondary: #1e293b;
+      --color-accent: #3b82f6;
+      --color-accent-light: #60a5fa;
+      --color-accent-glow: rgba(59, 130, 246, 0.3);
+      --color-white: #ffffff;
+      --color-gray-100: #f8fafc;
+      --color-gray-200: #e2e8f0;
+      --color-gray-400: #94a3b8;
+      --color-gray-600: #475569;
+      --color-gray-800: #1e293b;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 16px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--color-gray-800); background: var(--color-white); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-family: var(--font-heading); font-size: 1rem; border: none; cursor: pointer; transition: all 0.3s ease; gap: 0.5rem; }
+    .btn-primary { background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); color: #fff; box-shadow: 0 4px 14px var(--color-accent-glow); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--color-accent-glow); }
+    .btn-secondary { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+    .btn-ghost { background: transparent; color: var(--color-gray-600); }
+    .btn-ghost:hover { color: var(--color-accent); background: var(--color-gray-100); }
+    .text-center { text-align: center; }
+    .section-padding { padding: 6rem 0; }
+
+    /* Glassmorphism Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Header */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-primary); letter-spacing: -0.5px; }
+    .logo span { color: var(--color-accent); }
+    nav ul { display: flex; gap: 2.5rem; align-items: center; }
+    nav a { font-weight: 500; font-size: 0.95rem; color: var(--color-gray-600); }
+    nav a:hover { color: var(--color-accent); }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-gray-800); }
+
+    /* Hero */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; text-align: center; color: #fff; max-width: 900px; padding: 8rem 2rem 4rem; }
+    .hero h1 { font-family: var(--font-heading); font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px; }
+    .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-badges { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 4rem; }
+    .badge { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 0.5rem; }
+
+    /* Sections */
+    .section-title { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem; }
+    .section-subtitle { color: var(--color-gray-600); font-size: 1.1rem; max-width: 600px; margin: 0 auto 4rem; }
+
+    /* Features */
+    .features { background: var(--color-gray-100); }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .feature-card { padding: 2.5rem; border-radius: var(--radius); transition: 0.4s; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+    .icon-box { width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1.5rem; box-shadow: 0 8px 16px var(--color-accent-glow); }
+    .feature-card h3 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--color-primary); }
+
+    /* Destinations */
+    .destinations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+    .dest-card { border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: var(--shadow); transition: 0.4s; }
+    .dest-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+    .dest-img { height: 240px; background-size: cover; background-position: center; transition: 0.4s; }
+    .dest-card:hover .dest-img { transform: scale(1.05); }
+    .dest-content { padding: 2rem; }
+    .dest-content h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--color-primary); }
+    .price-tag { color: var(--color-accent); font-weight: 700; font-size: 1.2rem; margin-top: 1rem; display: block; }
+
+    /* Fleet */
+    .fleet { background: var(--color-gray-100); }
+    .fleet-card { display: flex; align-items: center; gap: 2rem; padding: 2rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--color-gray-200); margin-bottom: 1.5rem; transition: 0.3s; }
+    .fleet-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-lg); }
+    .fleet-img { width: 160px; height: 120px; object-fit: cover; border-radius: var(--radius-sm); background: var(--color-gray-100); }
+    .fleet-info { flex: 1; }
+    .fleet-info h3 { font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-primary); }
+    .fleet-specs { display: flex; gap: 1.5rem; margin-top: 0.5rem; color: var(--color-gray-600); font-size: 0.95rem; }
+
+    /* Map */
+    .map-section { padding: 0; }
+    .map-container { width: 100%; height: 450px; border-radius: 0; overflow: hidden; }
+    .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+    /* Footer */
+    footer { background: var(--color-primary); color: rgba(255,255,255,0.8); padding: 5rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+    .footer h4 { color: #fff; font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .footer ul li { margin-bottom: 0.8rem; }
+    .footer a:hover { color: var(--color-accent-light); }
+    .social-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+    .social-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; transition: 0.3s; }
+    .social-icon:hover { background: var(--color-accent); transform: translateY(-2px); }
+    .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; font-size: 0.9rem; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      nav ul { display: none; position: absolute; top: 80px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: var(--shadow-lg); }
+      nav ul.active { display: flex; }
+      .mobile-toggle { display: block; }
+      .fleet-card { flex-direction: column; text-align: center; }
+      .fleet-specs { justify-content: center; }
+      .btn { width: 100%; }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+  </style>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Travel Tour Pasuruan",
+    "image": "images/general/hero-bromo.jpg", <!-- FOTO: Hero background -->
+    "description": "Jasa travel dan sewa mobil premium di Pasuruan untuk wisata Bromo, Ijen, dan perjalanan korporat.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Pasuruan", "addressRegion": "Jawa Timur", "addressCountry": "ID" },
+    "priceRange": "$$",
+    "telephone": "+62-812-3456-7890"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Travel<span>Tour</span>Pasuruan</a>
+      <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#destinasi">Destinasi</a></li>
+          <li><a href="#armada">Armada</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#kontak" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.95rem;">Booking Sekarang</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Jelajahi Keindahan<br>Jawa Timur Bersama Kami</h1>
+      <p>Solusi perjalanan wisata Bromo, Ijen, dan sewa mobil premium. Armada terawat, driver profesional, harga transparan.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/6281234567890?text=Halo%20Travel%20Tour%20Pasuruan,%20saya%20mau%20tanya%20paket%20wisata" class="btn btn-primary">
+          <span>📱</span> Reservasi via WhatsApp
+        </a>
+        <a href="#destinasi" class="btn btn-secondary">
+          <span>🗺️</span> Lihat Paket Wisata
+        </a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge">✅ Aman & Terpercaya</div>
+        <div class="badge">✅ Driver Profesional</div>
+        <div class="badge">✅ Harga Transparan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section-padding features" id="tentang">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Kenapa Memilih Kami?</h2>
+        <p class="section-subtitle">Kami lebih dari sekadar rental mobil. Kami mitra perjalanan keluarga Anda.</p>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card glass-card">
+          <div class="icon-box">🛡️</div>
+          <h3>Keamanan Utama</h3>
+          <p>Semua perjalanan dijamin keamanannya. Driver berpengalaman, hafal rute, dan siap membantu jika ada kendala di jalan.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="icon-box">💎</div>
+          <h3>Kenyamanan Premium</h3>
+          <p>Armada diservis rutin sebelum berangkat. AC dingin, jok bersih, dan ruang bagasi luas untuk barang perjalananmu.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="icon-box">🤝</div>
+          <h3>Transparan & Jujur</h3>
+          <p>Tidak ada biaya tersembunyi. Harga di awal adalah harga yang kamu bayar. Kami menjunjung tinggi kepercayaan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section class="section-padding" id="destinasi">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Paket Wisata Populer</h2>
+        <p class="section-subtitle">Destinasi favorit yang sering kami kunjungi bersama pelanggan.</p>
+      </div>
+      <div class="destinations-grid">
+        <!-- Card 1: Bromo -->
+        <div class="dest-card">
+          <!-- FOTO: bromo/bromo-sunrise.jpg — Pemandangan sunrise Bromo dengan lautan pasir -->
+          <div class="dest-img" style="background-image: url('images/bromo/bromo-sunrise.jpg');"></div>
+          <div class="dest-content">
+            <h3>Bromo Sunrise Tour</h3>
+            <p>Jelajahi lautan pasir, naik ke Penanjakan untuk sunrise, dan nikmati keindahan King-Kong. Termasuk Jeep 4x4.</p>
+            <span class="price-tag">Mulai Rp 350.000 / orang</span>
+          </div>
+        </div>
+        <!-- Card 2: Ijen -->
+        <div class="dest-card">
+          <!-- FOTO: ijen/kawah-ijen.jpg — Pemandangan Kawah Ijen dengan blue fire -->
+          <div class="dest-img" style="background-image: url('images/ijen/kawah-ijen.jpg');"></div>
+          <div class="dest-content">
+            <h3>Ijen Blue Fire & Kawah</h3>
+            <p>Rute terbaik dari Pasuruan menuju Ijen. Nikmati lautan api biru dan danau asam terluas di dunia.</p>
+            <span class="price-tag">Mulai Rp 450.000 / orang</span>
+          </div>
+        </div>
+        <!-- Card 3: Travel -->
+        <div class="dest-card">
+          <!-- FOTO: general/travel-sby-pas.jpg — Mobil travel di jalan menuju Surabaya -->
+          <div class="dest-img" style="background-image: url('images/general/travel-sby-pas.jpg');"></div>
+          <div class="dest-content">
+            <h3>Travel Surabaya - Pasuruan</h3>
+            <p>Layanan antar-jemput harian. Nyaman, bisa berhenti di mana saja, dan harga jauh di bawah kereta.</p>
+            <span class="price-tag">Mulai Rp 45.000 / trip</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet -->
+  <section class="section-padding fleet" id="armada">
+    <div class="container">
+      <h2 class="text-center section-title">Armada Kami</h2>
+      <p class="text-center section-subtitle">Pilihan armada terawat untuk semua kebutuhan perjalanan Anda.</p>
+      
+      <div class="fleet-card">
+        <!-- FOTO: armada/avanza.jpg — Foto Toyota Avanza dari depan/samping -->
+        <img src="images/armada/avanza.jpg" alt="Toyota Avanza" class="fleet-img" onerror="this.style.display='none'">
+        <div class="fleet-info">
+          <h3>Toyota Avanza / Xenia</h3>
+          <div class="fleet-specs">
+            <span>👥 7 Penumpang</span> • <span>⚙️ Manual/Matic</span> • <span>❄️ AC Dingin</span>
+          </div>
+        </div>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20booking%20Toyota%20Avanza" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Pilih</a>
+      </div>
+
+      <div class="fleet-card">
+        <!-- FOTO: armada/innova.jpg — Foto Toyota Innova Reborn -->
+        <img src="images/armada/innova.jpg" alt="Toyota Innova" class="fleet-img" onerror="this.style.display='none'">
+        <div class="fleet-info">
+          <h3>Toyota Innova Reborn</h3>
+          <div class="fleet-specs">
+            <span>👥 7 Penumpang</span> • <span>⚙️ Matic</span> • <span>✨ Premium</span>
+          </div>
+        </div>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20booking%20Toyota%20Innova" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Pilih</a>
+      </div>
+
+      <div class="fleet-card">
+        <!-- FOTO: armada/hiace.jpg — Foto Mitsubishi Hiace -->
+        <img src="images/armada/hiace.jpg" alt="Mitsubishi Hiace" class="fleet-img" onerror="this.style.display='none'">
+        <div class="fleet-info">
+          <h3>Mitsubishi Hiace</h3>
+          <div class="fleet-specs">
+            <span>👥 14 Penumpang</span> • <span>⚙️ Manual</span> • <span>🏔️ Kuat Medan</span>
+          </div>
+        </div>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20booking%20Mitsubishi%20Hiace" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Pilih</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section">
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31652.726660!2d112.738984!3d-7.646302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7845e9a5b8b3c7%3A0x1234567890abcdef!2sPasuruan%2C%20Jawa%20Timur!5e0!3m2!1sen!2sid!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Travel Tour Pasuruan"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Travel Tour Pasuruan</h4>
+          <p style="margin-bottom: 1.5rem; opacity: 0.9;">Mitra perjalanan wisata terbaik di Jawa Timur. Menghubungkan Anda dengan keindahan alam yang tak terlupakan.</p>
+          <div class="social-icons">
+            <!-- FOTO: general/instagram-icon.png — Icon Instagram (ganti dengan icon SVG/PNG) -->
+            <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+            <!-- FOTO: general/facebook-icon.png — Icon Facebook -->
+            <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+            <!-- FOTO: general/twitter-icon.png — Icon Twitter/X -->
+            <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+            <!-- FOTO: general/whatsapp-icon.png — Icon WhatsApp -->
+            <a href="#" class="social-icon" aria-label="WhatsApp">📱</a>
+          </div>
+        </div>
+        <div>
+          <h4>Destinasi</h4>
+          <ul>
+            <li><a href="#">Paket Bromo</a></li>
+            <li><a href="#">Paket Ijen</a></li>
+            <li><a href="#">Wisata Batu</a></li>
+            <li><a href="#">Travel Malang</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontak Kami</h4>
+          <ul>
+            <li>📍 Jl. Raya Pasuruan No. 123, Jawa Timur</li>
+            <li>📞 +62 812-3456-7890</li>
+            <li>✉️ booking@traveltourpasuruan.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Travel Tour Pasuruan. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu
+    const toggle = document.querySelector('.mobile-toggle');
+    const nav = document.querySelector('nav ul');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('active'));
+    }
+    // Close menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
+</body>
+</html>
